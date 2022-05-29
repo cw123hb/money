@@ -24,9 +24,9 @@ class CashFlow(object):
         self.generate_series(description, amount, frequency='D', start=date_of_activity, end=date_of_activity),
         
     def export_to_csv(self, dirpath, filename):
-        """Export the data to a csv file"""
-
-        Sort data by 1) date_of_activity ascending and 2) amount ascending before the export.
+        """ Export the data to a csv file.""" 
+        """ Sort data by 1) date_of_activity ascending and 2) amount ascending before the export."""
+        
         path = os.path.join(dirpath, filename)
         with open(path, 'w') as csvfile:
             csv_writer = csv.writer(csvfile, delimiter=',')
