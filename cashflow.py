@@ -14,6 +14,7 @@ class CashFlow(object):
     def generate_series(self, description, amount, frequency='MS',
                         start=datetime.date(datetime.date.today().year, 1, 1),
                         end=datetime.date(datetime.date.today().year, 12, 31)):
+        
         """Generate a new data series and append it to the existing data"""
         data = [(date_of_activity, description, amount) for date_of_activity in pd.date_range(start, end, freq=frequency)]
         self.series = pd.concat([self.series, pd.DataFrame(data, columns=self.columns)])
